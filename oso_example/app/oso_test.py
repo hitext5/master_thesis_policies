@@ -1,21 +1,23 @@
 from oso import Oso
-from .models import ElectronicDevice, SmartPlug
 
-# Initialize the Oso object. This object is usually used globally throughout
-# an application.
-oso = Oso()
-
-# Tell Oso about the data you will authorize. These types can be referenced
-# in the policy.
-oso.register_class(ElectronicDevice)
-oso.register_class(SmartPlug)
-
-# Load Polar policy file
-oso.load_files(["app/main.polar"])
+from electronic_device import ElectronicDevice
+from smart_plug import SmartPlug
 
 
 # Check if the device is allowed to plug into the smart plug
-def test_basic():
+def test_basic_oso():
+    # Initialize the Oso object. This object is usually used globally throughout
+    # an application.
+    oso = Oso()
+
+    # Tell Oso about the data you will authorize. These types can be referenced
+    # in the policy.
+    oso.register_class(ElectronicDevice)
+    oso.register_class(SmartPlug)
+
+    # Load Polar policy file
+    oso.load_files(["main.polar"])
+
     # Create an instance of ElectronicDevice with a work_power of 30
     hairdryer = ElectronicDevice(work_power=30)
 
@@ -33,4 +35,3 @@ def test_basic():
     plug.plug_out(ElectronicDevice(work_power=50))
     assert plug.rated_power == 50
     assert plug.slots == 4
-

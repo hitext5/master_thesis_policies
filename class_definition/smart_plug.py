@@ -1,10 +1,7 @@
 from dataclasses import dataclass
 from typing import List
 
-
-@dataclass
-class ElectronicDevice:
-    work_power: int
+from electronic_device import ElectronicDevice
 
 
 @dataclass
@@ -26,3 +23,8 @@ class SmartPlug:
         except ValueError:
             return f"Device is not plugged in."
 
+    def get_rated_power(self):
+        return self.rated_power
+
+    def get_slots(self):
+        return self.slots
