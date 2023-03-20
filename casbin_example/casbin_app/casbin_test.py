@@ -7,7 +7,7 @@ from smart_plug import SmartPlug
 # Check if the device is allowed to plug into the smart plug
 def test_basic_casbin():
     # Initialize the Casbin object.
-    e = casbin.Enforcer("model.conf", "policy.csv")
+    e = casbin.Enforcer("casbin_model.conf", "casbin_policy.csv")
 
     # Create an instance of ElectronicDevice with a work_power of 40
     hairdryer = ElectronicDevice(work_power=40)
@@ -28,4 +28,3 @@ def test_basic_casbin():
     plug.plug_in(fan)
 
     assert not e.enforce(charger, plug, "plug_in")
-    plug.plug_in(charger)
