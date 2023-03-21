@@ -6,6 +6,9 @@ from smart_plug import SmartPlug
 plug_json = {}  # Define plug_json in the global scope
 
 
+# The server has to be running for the tests to work.
+# Run server with opa run --server opa_policy.rego
+
 # Check if the device is allowed to plug into the smart plug
 def test_basic_casbin():
     # Define a function to evaluate the policy with input data
