@@ -9,6 +9,13 @@ allow {
 }
 
 enough_power(electronic_device, smart_plug) {
+    count(electronic_device) > 1
+    total_power := sum([device.work_power | device := electronic_device[_]])
+    smart_plug.rated_power >= total_power
+}
+
+enough_power(electronic_device, smart_plug) {
+    count(electronic_device) == 1
     smart_plug.rated_power >= electronic_device.work_power
 }
 
