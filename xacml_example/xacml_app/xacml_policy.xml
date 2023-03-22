@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Policy xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+        PolicyId="plug-in-policy"
+        Version="1.0"
+        RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable">
+    <Description>Plug-in Policy</Description>
+    <Target/>
+    <Rule RuleId="plug-in-rule" Effect="Permit">
+        <Condition>
+            <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:and">
+                <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                    <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">plug_in</AttributeValue>
+                    <AttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         DataType="http://www.w3.org/2001/XMLSchema#integer" MustBePresent="true"/>
+                </Apply>
+                <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:integer-greater-than-or-equal">
+                    <AttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         DataType="http://www.w3.org/2001/XMLSchema#integer"
+                                         MustBePresent="true"/>
+                    <AttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         DataType="http://www.w3.org/2001/XMLSchema#integer"
+                                         MustBePresent="true"/>
+                </Apply>
+                <Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:integer-greater-than-or-equal">
+                    <AttributeDesignator AttributeId="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                                         DataType="http://www.w3.org/2001/XMLSchema#integer"
+                                         MustBePresent="true"/>
+                    <AttributeValue DataType="<EUGPSCoordinates>http://www.w3.org/2001/XMLSchema#integer">1
+                    </AttributeValue>
+                </Apply>
+            </Apply>
+        </Condition>
+    </Rule>
+</Policy>

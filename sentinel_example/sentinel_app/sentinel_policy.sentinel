@@ -18,5 +18,3 @@ correct_action = rule {
 main = rule {
     enough_power and enough_slots and correct_action
 }
-
-
