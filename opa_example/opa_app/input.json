@@ -1,6 +1,6 @@
 {
   "input": {
-    "electronic:device": [
+    "electronic_device": [
       {
         "work_power": 50
       },
@@ -11,7 +11,7 @@
         "work_power": 30
       }
     ],
-    "smart:plug": {
+    "smart_plug": {
       "rated_power": 120,
       "slots": 5
     },
