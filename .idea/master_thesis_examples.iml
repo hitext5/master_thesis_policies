@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/class_definition" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (master_thesis_examples)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (Masterarbeit_Beispiele)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
