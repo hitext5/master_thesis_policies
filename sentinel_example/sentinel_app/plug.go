@@ -1,33 +1,41 @@
-package main
+package plug
 
 import (
-    "github.com/hashicorp/sentinel-sdk"
-    "github.com/hashicorp/sentinel-sdk/framework"
+	sdk "github.com/hashicorp/sentinel-sdk"
+	"github.com/hashicorp/sentinel-sdk/framework"
 )
 
-type SmartPlug struct {
-    RatedPower int
-    Slots      int
+//type SmartPlug struct {
+//	RatedPower int
+//	Slots      int
+//}
+
+// New creates a new Plugin.
+func New() sdk.Plugin {
+	return &framework.Plugin{
+		Root: &root{},
+	}
 }
 
-func main() {
-    sdk.NewPlugin("plug",
-        func() interface{} {
-            return &SmartPlug{
-                RatedPower: 1000,
-                Slots:      4,
-            }
-        },
-        func(m *framework.PluginMap) error {
-            m.Map("rated_power", func(args ...interface{}) (interface{}, error) {
-                sp := args[0].(*SmartPlug)
-                return sp.RatedPower, nil
-            })
-            m.Map("slots", func(args ...interface{}) (interface{}, error) {
-                sp := args[0].(*SmartPlug)
-                return sp.Slots, nil
-            })
-            return nil
-        },
-    )
+type root struct {
+	suffix string
+}
+
+// framework.Root impl.
+func (m *root) Configure(raw map[string]interface{}) error {
+	if v, ok := raw["suffix"]; ok {
+		m.suffix = v.(string)
+	}
+
+	return nil
+}
+
+// framework.Namespace impl.
+func (m *root) Get(key string) (interface{}, error) {
+	suffix := m.suffix
+	if suffix == "" {
+		suffix = "!!"
+	}
+
+	return key + suffix, nil
 }

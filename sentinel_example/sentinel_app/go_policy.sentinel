@@ -2,11 +2,11 @@ import "plug"
 import "electronic_device"
 
 enough_power = rule {
-    plug_rated_power >= electronic_device_work_power
+    plug.rated_power >= electronic_device.work_power
 }
 
 enough_slots = rule {
-    plug_slots >= 1
+    plug.slots >= 1
 }
 
 correct_action = rule {
