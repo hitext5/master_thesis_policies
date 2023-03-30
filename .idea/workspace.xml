@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="command for the server to run">
-      <change afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/master_thesis_examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/master_thesis_examples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="casbin example with list and function&#10;r.electronic_device in the casbin_policy.csv has to be adjusted to [0] in order to apply the list access.&#10;test(r.electronic_device, r.smart_plug) in casbin_model.conf if the function should be used.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_model.conf" beforeDir="false" afterPath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_model.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_policy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_policy.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/go_policy.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/go_policy.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/plug.go" beforeDir="false" afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/plug.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +190,7 @@
       <workItem from="1679612862183" duration="623000" />
       <workItem from="1680096542495" duration="10510000" />
       <workItem from="1680194501497" duration="3465000" />
-      <workItem from="1680198019121" duration="783000" />
+      <workItem from="1680198019121" duration="1781000" />
     </task>
     <task id="LOCAL-00001" summary="renamed project">
       <created>1679153715909</created>
@@ -237,7 +234,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679516783021</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="go sdk can now be used">
+      <created>1680199020344</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680199020344</updated>
+    </task>
+    <task id="LOCAL-00008" summary="casbin example with list and function&#10;r.electronic_device in the casbin_policy.csv has to be adjusted to [0] in order to apply the list access.&#10;test(r.electronic_device, r.smart_plug) in casbin_model.conf if the function should be used.">
+      <created>1680199201990</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680199201990</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +284,9 @@
     <MESSAGE value="example now works with multiple devices" />
     <MESSAGE value="command for the server to run" />
     <MESSAGE value="xacml example (does not work yet)" />
-    <option name="LAST_COMMIT_MESSAGE" value="xacml example (does not work yet)" />
+    <MESSAGE value="go sdk can now be used" />
+    <MESSAGE value="casbin example with list and function&#10;r.electronic_device in the casbin_policy.csv has to be adjusted to [0] in order to apply the list access.&#10;test(r.electronic_device, r.smart_plug) in casbin_model.conf if the function should be used." />
+    <option name="LAST_COMMIT_MESSAGE" value="casbin example with list and function&#10;r.electronic_device in the casbin_policy.csv has to be adjusted to [0] in order to apply the list access.&#10;test(r.electronic_device, r.smart_plug) in casbin_model.conf if the function should be used." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1680012242279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
@@ -286,6 +299,6 @@
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$casbin_test.coverage" NAME="casbin_test Coverage Results" MODIFIED="1680196225812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/casbin_app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1679157841299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$casbin_test__1_.coverage" NAME="casbin_test (1) Coverage Results" MODIFIED="1679157907997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
-    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1680198412721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/casbin_app" />
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1680199798798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/casbin_app" />
   </component>
 </project>

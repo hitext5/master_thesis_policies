@@ -1,1 +1,2 @@
-p, r.smart_plug.rated_power >= r.electronic_device.work_power, r.smart_plug.slots >= 1
+p, r.smart_plug.rated_power >= r.electronic_device[0].work_power, r.smart_plug.slots >= 1
+p, r.smart_plug.rated_power >= r.electronic_device[1].work_power, r.smart_plug.slots >= 1
