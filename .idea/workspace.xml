@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="casbin example with multiple policies">
+    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="sentinel example with a list as an object and when keyword in the policy&#10;error is commented, can be used to debug with cmd (in Pycharm the error is catched) print() does not return anything">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_policy.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_policy.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/casbin_example/casbin_app/casbin_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_definition/electronic_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_definition/electronic_device.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_definition/smart_plug.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_definition/solar_panel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opa_example/opa_app/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/opa_example/opa_app/input.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opa_example/opa_app/opa_policy.rego" beforeDir="false" afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_solar_panel.rego" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opa_example/opa_app/opa_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oso_example/oso_app/oso_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/oso_example/oso_app/oso_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,69 +73,25 @@
       <recent name="C:\master_thesis_examples\class_definition" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sentinel_test">
+  <component name="RunManager" selected="Python tests.Python tests for opa_test.test_basic_opa">
     <configuration default="true" type="OPA_RUN_CONFIGURATION" factoryName="Opa configuration factory">
       <option name="query" value="" />
       <option name="additionalargs" value="" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="oso_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="master_thesis_examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/oso_example/oso_app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oso_example/oso_app/oso_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sentinel_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="master_thesis_examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sentinel_example/sentinel_app" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for oso_test.test_basic_oso" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for opa_test.test_basic_opa" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="master_thesis_examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/oso_example/oso_app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/opa_example/opa_app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;oso_test.test_basic_oso&quot;" />
+      <option name="_new_target" value="&quot;opa_test.test_basic_opa&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -148,35 +110,31 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in casbin_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in opa_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="master_thesis_examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/casbin_example/casbin_app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/opa_example/opa_app" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/casbin_example/casbin_app/casbin_test.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/opa_example/opa_app/opa_test.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sentinel_test" />
-      <item itemvalue="Python.oso_test" />
-      <item itemvalue="Python tests.Python tests in casbin_test.py" />
+      <item itemvalue="Python tests.Python tests for opa_test.test_basic_opa" />
+      <item itemvalue="Python tests.Python tests in opa_test.py" />
       <item itemvalue="Python tests.Python tests for sentinel_test.test_basic_sentinel" />
-      <item itemvalue="Python tests.Python tests for oso_test.test_basic_oso" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sentinel_test" />
+        <item itemvalue="Python tests.Python tests for opa_test.test_basic_opa" />
+        <item itemvalue="Python tests.Python tests in opa_test.py" />
         <item itemvalue="Python tests.Python tests for sentinel_test.test_basic_sentinel" />
-        <item itemvalue="Python tests.Python tests in casbin_test.py" />
-        <item itemvalue="Python tests.Python tests for oso_test.test_basic_oso" />
-        <item itemvalue="Python.oso_test" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +156,9 @@
       <workItem from="1680096542495" duration="10510000" />
       <workItem from="1680194501497" duration="3465000" />
       <workItem from="1680198019121" duration="12189000" />
-      <workItem from="1680280834353" duration="1917000" />
+      <workItem from="1680280834353" duration="2303000" />
+      <workItem from="1680613267260" duration="1202000" />
+      <workItem from="1680700620929" duration="6143000" />
     </task>
     <task id="LOCAL-00001" summary="renamed project">
       <created>1679153715909</created>
@@ -263,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680200473007</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="sentinel example with a list as an object and when keyword in the policy&#10;error is commented, can be used to debug with cmd (in Pycharm the error is catched) print() does not return anything">
+      <created>1680283118281</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680283118281</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,20 +269,22 @@
     <MESSAGE value="go sdk can now be used" />
     <MESSAGE value="casbin example with list and function&#10;r.electronic_device in the casbin_policy.csv has to be adjusted to [0] in order to apply the list access.&#10;test(r.electronic_device, r.smart_plug) in casbin_model.conf if the function should be used." />
     <MESSAGE value="casbin example with multiple policies" />
-    <option name="LAST_COMMIT_MESSAGE" value="casbin example with multiple policies" />
+    <MESSAGE value="sentinel example with a list as an object and when keyword in the policy&#10;error is commented, can be used to debug with cmd (in Pycharm the error is catched) print() does not return anything" />
+    <option name="LAST_COMMIT_MESSAGE" value="sentinel example with a list as an object and when keyword in the policy&#10;error is commented, can be used to debug with cmd (in Pycharm the error is catched) print() does not return anything" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1680282341963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
-    <SUITE FILE_PATH="coverage/master_thesis_examples$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1679585167437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1679332508399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
-    <SUITE FILE_PATH="coverage/master_thesis_examples$.coverage" NAME=" Coverage Results" MODIFIED="1679508220914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
-    <SUITE FILE_PATH="coverage/master_thesis_examples$casbin_test.coverage" NAME="casbin_test Coverage Results" MODIFIED="1679157916093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$test.coverage" NAME="test Coverage Results" MODIFIED="1679332339877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1679507855845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$casbin_test.coverage" NAME="casbin_test Coverage Results" MODIFIED="1680208082192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/casbin_app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1679157841299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$casbin_test__1_.coverage" NAME="casbin_test (1) Coverage Results" MODIFIED="1679157907997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1680210186762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
-    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1680282107811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1680704136893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1680706814116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1680282978368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
+    <SUITE FILE_PATH="coverage/master_thesis_examples$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1679585167437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
+    <SUITE FILE_PATH="coverage/master_thesis_examples$.coverage" NAME=" Coverage Results" MODIFIED="1679508220914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
+    <SUITE FILE_PATH="coverage/master_thesis_examples$casbin_test.coverage" NAME="casbin_test Coverage Results" MODIFIED="1679157916093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
   </component>
 </project>

@@ -1,20 +1,16 @@
 {
-  "input": {
-    "electronic_device": [
+  "requesting_device": {
+    "work_power": 30
+  },
+  "solar_panel": {
+    "provided_power": 110,
+    "powered_devices": [
       {
-        "work_power": 50
+        "work_power": 30
       },
       {
         "work_power": 40
-      },
-      {
-        "work_power": 30
       }
-    ],
-    "smart_plug": {
-      "rated_power": 120,
-      "slots": 5
-    },
-    "act": "plug_in"
+    ]
   }
 }

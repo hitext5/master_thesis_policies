@@ -1,7 +1,7 @@
 import subprocess
 
 from electronic_device import ElectronicDevice
-from smart_plug import SmartPlug
+from solar_panel import SolarPanel
 
 
 def test_basic_sentinel():
@@ -36,7 +36,7 @@ def test_basic_sentinel():
     charger = ElectronicDevice(work_power=30)
 
     # Create an instance of SmartPlug with a rated_power of 90 and an empty list for plugged_devices
-    plug = SmartPlug(rated_power=90, plugged_devices=[], slots=5)
+    plug = SolarPanel(provided_power=90, powered_devices=[], slots=5)
 
     # update_sentinel_policy(f'plug_slots = {plug.slots}\nplug_rated_power = {plug.rated_power}\n'
     #                        f'electronic_device_work_power = {hairdryer.work_power}\ninput_act = "plug_in"\n\n')

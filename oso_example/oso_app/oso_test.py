@@ -1,7 +1,7 @@
 from oso import Oso
 
 from electronic_device import ElectronicDevice
-from smart_plug import SmartPlug
+from solar_panel import SolarPanel
 
 
 # Check if the device is allowed to plug into the smart plug
@@ -13,7 +13,7 @@ def test_basic_oso():
     # Tell Oso about the data you will authorize. These types can be referenced
     # in the policy.
     oso.register_class(ElectronicDevice)
-    oso.register_class(SmartPlug)
+    oso.register_class(SolarPanel)
 
     # Load Polar policy file
     oso.load_files(["oso_policy.polar"])
@@ -28,7 +28,7 @@ def test_basic_oso():
     charger = ElectronicDevice(work_power=30)
 
     # Create an instance of SmartPlug with a rated_power of 90 and an empty list for plugged_devices
-    plug = SmartPlug(rated_power=90, plugged_devices=[], slots=5)
+    plug = SolarPanel(provided_power=90, powered_devices=[], slots=5)
 
     assert oso.is_allowed(hairdryer, "plug_in", plug)
     plug.plug_in(hairdryer)

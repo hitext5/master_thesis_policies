@@ -1,7 +1,7 @@
 import casbin
 
 from electronic_device import ElectronicDevice
-from smart_plug import SmartPlug
+from solar_panel import SolarPanel
 
 
 # def overall_power(objects: list[ElectronicDevice], subject: SmartPlug):
@@ -32,7 +32,7 @@ def test_basic_casbin():
     charger = ElectronicDevice(work_power=60)
 
     # Create an instance of SmartPlug with a rated_power of 90 and an empty list for plugged_devices
-    plug = SmartPlug(rated_power=90, plugged_devices=[], slots=5)
+    plug = SolarPanel(provided_power=90, powered_devices=[], slots=5)
 
     obj_list = [hairdryer, fan]
 
