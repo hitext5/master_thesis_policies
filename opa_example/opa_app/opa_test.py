@@ -1,20 +1,44 @@
 import requests
+import subprocess
 
 from electronic_device import ElectronicDevice
+from smoke_detector import SmokeDetector
 from solar_panel import SolarPanel
-
-plug_json = {}  # Define plug_json in the global scope
 
 
 # The server has to be running for the tests to work.
-# Run server with opa run --server opa_policy_solar_panel.rego
+# Run server with opa run --server in the terminal manually before running the tests.
 
-# Check if the device is allowed to plug into the smart plug
 def test_basic_opa():
-    # Define a function to evaluate the policy with input data
-    def eval_policy(input_data):
+    # Start the OPA server
+    # Increases the test evaluation time by almost 1 second
+    # For better comparison with the other tests, the server should be started manually
+    process = subprocess.Popen("opa run --server ")
+
+    # Load the policies into the OPA server
+    requests.put("http://localhost:8181/v1/policies/open_door",
+                 data=open("opa_policy_open_door.rego", "r").read())
+    requests.put("http://localhost:8181/v1/policies/solar_panel",
+                 data=open("opa_policy_solar_panel.rego", "r").read())
+
+    # Create an instance of SmokeDetector with a smoke_detected attribute of True
+    living_room_smoke_detector = SmokeDetector(smoke_detected=True)
+
+    # Define a function to evaluate the policy for the open door with input data
+    def eval_policy_open_door(input_data):
         response = requests.post(
-            "http://localhost:8181/v1/data/opa_policy/allow",
+            "http://localhost:8181/v1/data/open_door/smoke_detected",
+            json={"input": input_data}
+        )
+        return response.json()["result"]
+
+    # Assert that the policy returns True
+    assert eval_policy_open_door({"smoke_detector": living_room_smoke_detector.get_json_smoke_detected()})
+
+    # Define a function to evaluate the policy for the solar panel with input data
+    def eval_policy_solar_panel(input_data):
+        response = requests.post(
+            "http://localhost:8181/v1/data/solar_panel/enough_power",
             json={"input": input_data}
         )
         return response.json()["result"]
@@ -29,8 +53,11 @@ def test_basic_opa():
     charger = ElectronicDevice(work_power=30)
 
     # Create an instance of SmartPlug with a rated_power of 90 and an empty list for plugged_devices
-    solar_panel = SolarPanel(provided_power=110, powered_devices=[])
+    solar_panel = SolarPanel(provided_power=110, powered_devices=[hairdryer, fan])
 
-    assert eval_policy({"requesting_device": charger.get_json_work_power(),
-                        "solar_panel": {"provided_power": solar_panel.get_rated_power(),
-                                        "powered_devices": solar_panel.get_powered_devices()}})
+    # Assert that the policy returns True
+    assert eval_policy_solar_panel({"requesting_device": charger.get_json_work_power(),
+                                    "solar_panel": {"provided_power": solar_panel.get_rated_power(),
+                                                    "powered_devices": solar_panel.get_powered_devices()}})
+    # Stop the OPA server
+    process.terminate()

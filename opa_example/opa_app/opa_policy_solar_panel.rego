@@ -1,14 +1,8 @@
-package opa_policy
+package solar_panel
 
-default allow = false
-
-allow {
-    enough_power(input.requesting_device, input.solar_panel)
-}
-
-enough_power(requesting_device, solar_panel) {
-    total_power := sum([device.work_power | device := solar_panel.powered_devices[_]]) + requesting_device.work_power
-    solar_panel.provided_power >= total_power
+enough_power {
+    total_power := sum([device.work_power | device := input.solar_panel.powered_devices[_]]) + input.requesting_device.work_power
+    input.solar_panel.provided_power >= total_power
 }
 
 # The above policy is a simple example of how to use OPA to enforce a policy.
