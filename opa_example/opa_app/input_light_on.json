@@ -1,0 +1,10 @@
+{
+  "input": {
+    "clock": {
+      "current_time": 9
+    },
+    "owner_location": {
+      "at_home": false
+    }
+  }
+}
