@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="open door and window is now one policy with the priority, that the first allow is first evaluated">
-      <change afterPath="$PROJECT_DIR$/class_definition/clock.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/class_definition/light_bulb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/opa_example/opa_app/input_light_on.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_light_on.rego" afterDir="false" />
+    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="added example light_on which demonstrates the reusability of other policy packages">
+      <change afterPath="$PROJECT_DIR$/class_definition/weather_station.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class_definition/window_shade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_shade_with_weather.rego" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_window_and_shade.rego" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_definition/window.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_definition/window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_light_on.rego" beforeDir="false" afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_light_on.rego" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_open_door_and_window.rego" beforeDir="false" afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_policy_window_with_weather.rego" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/opa_example/opa_app/opa_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,8 +74,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Python tests for opa_test.test_light_on">
-    <configuration default="true" type="OPA_RUN_CONFIGURATION" factoryName="Opa configuration factory">
-      <option name="query" value="" />
+    <configuration default="true" type="OPA_TEST_RUN_CONFIGURATION" factoryName="Opa configuration factory">
       <option name="additionalargs" value="" />
       <envs />
       <method v="2" />
@@ -191,7 +193,8 @@
       <workItem from="1680613267260" duration="1202000" />
       <workItem from="1680700620929" duration="7657000" />
       <workItem from="1680789399650" duration="17446000" />
-      <workItem from="1680869378452" duration="6231000" />
+      <workItem from="1680869378452" duration="8949000" />
+      <workItem from="1680961803803" duration="2817000" />
     </task>
     <task id="LOCAL-00001" summary="renamed project">
       <created>1679153715909</created>
@@ -291,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680814829487</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added example light_on which demonstrates the reusability of other policy packages">
+      <created>1680875801130</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680875801130</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,18 +345,8 @@
     <MESSAGE value="added the example open door when smoke is detected&#10;decreased the policies to only necessary lines&#10;opa server will start now automatically but increases compile time &#10;policies are now added to the server within the test" />
     <MESSAGE value="added the example close doors and windows when the apartment owner is absent" />
     <MESSAGE value="open door and window is now one policy with the priority, that the first allow is first evaluated" />
-    <option name="LAST_COMMIT_MESSAGE" value="open door and window is now one policy with the priority, that the first allow is first evaluated" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/opa_example/opa_app/opa_test.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="added example light_on which demonstrates the reusability of other policy packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="added example light_on which demonstrates the reusability of other policy packages" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/master_thesis_examples$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1679332508399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
@@ -357,7 +357,7 @@
     <SUITE FILE_PATH="coverage/master_thesis_examples$casbin_test__1_.coverage" NAME="casbin_test (1) Coverage Results" MODIFIED="1679157907997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1680210186762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1680813830032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
-    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1680875645865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1680886011075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1680282978368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$adapters.coverage" NAME="adapters Coverage Results" MODIFIED="1680799825790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/requests" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1679585167437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />

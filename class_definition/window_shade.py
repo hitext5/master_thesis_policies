@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Window:
+class WindowShade:
     closed_state: bool
 
     def get_closed_state(self):

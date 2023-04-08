@@ -17,4 +17,4 @@ owner_at_home {
     input.owner_location.at_home
 }
 
-# The policy is to lock the doors and windows when the owner is away
+# The policy is to lock the doors and windows when the owner is away except when smoke is detected

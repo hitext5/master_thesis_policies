@@ -8,6 +8,8 @@ from owner_location import ApartmentOwner
 from smoke_detector import SmokeDetector
 from solar_panel import SolarPanel
 from clock import Clock
+from weather_station import WeatherStation
+from window_shade import WindowShade
 
 
 # The server has to be running for the tests to work.
@@ -104,7 +106,7 @@ def test_light_on():
                  data=open("opa_policy_light_on.rego", "r").read())
 
     echo_dot = Clock(current_time=datetime.now().hour)
-    #echo_dot = Clock(current_time=4)
+    # echo_dot = Clock(current_time=4)
     ron = ApartmentOwner(at_home=False)
 
     def eval_policy_light_on(input_data):
@@ -120,5 +122,54 @@ def test_light_on():
 
     assert eval_policy_light_on({"clock": echo_dot.get_json_current_time(),
                                  "owner_location": ron.get_json_location()})
+
+    process.terminate()
+
+
+def test_open_window_and_shade():
+    process = subprocess.Popen("opa run --server ")
+
+    requests.put("http://localhost:8181/v1/policies/open_door_and_window",
+                 data=open("opa_policy_open_door_and_window.rego", "r").read())
+    requests.put("http://localhost:8181/v1/policies/window_with_weather",
+                 data=open("opa_policy_window_with_weather.rego", "r").read())
+    requests.put("http://localhost:8181/v1/policies/shade_with_weather",
+                 data=open("opa_policy_shade_with_weather.rego", "r").read())
+
+    ron = ApartmentOwner(at_home=True)
+    kitchen_window_shade = WindowShade(closed_state=True)
+    ws_2902 = WeatherStation(wind_speed=10, weather_condition="sunny")
+
+    def eval_policy_widow_shade_open(input_data):
+        response = requests.post(
+            "http://localhost:8181/v1/data/shade_with_weather/allow",
+            json={"input": input_data}
+        )
+        if response.status_code != 200:
+            raise Exception("Error evaluating policy: " + response.text)
+        if 'result' not in response.json():
+            return False
+        return response.json()["result"]
+
+    def eval_policy_widow_open(input_data):
+        response = requests.post(
+            "http://localhost:8181/v1/data/window_with_weather/allow",
+            json={"input": input_data}
+        )
+        if response.status_code != 200:
+            raise Exception("Error evaluating policy: " + response.text)
+        if 'result' not in response.json():
+            return False
+        return response.json()["result"]
+
+    assert eval_policy_widow_shade_open({"owner_location": ron.get_json_location(),
+                                         "weather": {"wind_speed": ws_2902.get_wind_speed(),
+                                                     "weather_condition": ws_2902.get_weather_condition()}})
+    kitchen_window_shade.set_closed_state(False)
+
+    assert eval_policy_widow_open({"owner_location": ron.get_json_location(),
+                                   "window_shade": kitchen_window_shade.get_json_closed_state(),
+                                   "weather": {"wind_speed": ws_2902.get_wind_speed(),
+                                               "weather_condition": ws_2902.get_weather_condition()}})
 
     process.terminate()

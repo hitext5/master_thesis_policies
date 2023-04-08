@@ -16,3 +16,5 @@ before_sunrise {
     input.clock.current_time < 6
 }
 
+# The light should be on if it is after sunset or before sunrise and the owner is not at home
+
