@@ -4,7 +4,6 @@ from electronic_device import ElectronicDevice
 from solar_panel import SolarPanel
 
 
-# Check if the device is allowed to plug into the smart plug
 def test_solar_panel():
     # Initialize the Casbin object.
     e = casbin.Enforcer("casbin_model.conf", "casbin_policy.csv")

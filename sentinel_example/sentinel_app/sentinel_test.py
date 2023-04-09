@@ -6,7 +6,6 @@ from solar_panel import SolarPanel
 
 
 def test_solar_panel():
-    # Define a function to update the plug_json
     def apply_policy(requesting_device: ElectronicDevice, providing_solar_panel: SolarPanel):
         try:
             # Update the json files

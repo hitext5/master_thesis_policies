@@ -46,8 +46,10 @@ def test_open_door():
 
 
 def test_solar_panel():
+    # Start the OPA server
     process = subprocess.Popen("opa run --server ")
 
+    # Load the policies into the OPA server
     requests.put("http://localhost:8181/v1/policies/solar_panel",
                  data=open("opa_policy_solar_panel.rego", "r").read())
 
@@ -70,7 +72,7 @@ def test_solar_panel():
     assert eval_policy_solar_panel({"requesting_device": charger.get_json_work_power(),
                                     "solar_panel": {"provided_power": solar_panel.get_provided_power(),
                                                     "powered_devices": solar_panel.get_powered_devices()}})
-
+    # Stop the OPA server
     process.terminate()
 
 
