@@ -8,6 +8,7 @@ from owner_location import ApartmentOwner
 from smoke_detector import SmokeDetector
 from solar_panel import SolarPanel
 from clock import Clock
+from thermometer import Thermometer
 from weather_station import WeatherStation
 from window_shade import WindowShade
 
@@ -171,5 +172,31 @@ def test_open_window_and_shade():
                                    "window_shade": kitchen_window_shade.get_json_closed_state(),
                                    "weather": {"wind_speed": ws_2902.get_wind_speed(),
                                                "weather_condition": ws_2902.get_weather_condition()}})
+
+    process.terminate()
+
+
+def test_fireplace_and_ac():
+    process = subprocess.Popen("opa run --server ")
+
+    requests.put("http://localhost:8181/v1/policies/fireplace_and_ac",
+                 data=open("opa_policy_fireplace_and_ac.rego", "r").read())
+
+    indoor_thermometer = Thermometer(temperature=20)
+    ron = ApartmentOwner(at_home=False)
+
+    def eval_policy_fireplace_and_ac(input_data):
+        response = requests.post(
+            "http://localhost:8181/v1/data/fireplace_and_ac/allow",
+            json={"input": input_data}
+        )
+        if response.status_code != 200:
+            raise Exception("Error evaluating policy: " + response.text)
+        if 'result' not in response.json():
+            return False
+        return response.json()["result"]
+
+    assert eval_policy_fireplace_and_ac({"owner_location": ron.get_json_location(),
+                                         "thermometer": indoor_thermometer.get_json_temperature()})
 
     process.terminate()
