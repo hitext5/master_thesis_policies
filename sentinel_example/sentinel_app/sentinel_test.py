@@ -9,6 +9,7 @@ def test_solar_panel():
     # Define a function to update the plug_json
     def apply_policy(requesting_device: ElectronicDevice, providing_solar_panel: SolarPanel):
         try:
+            # Update the json files
             with open('electronic_device.json', 'w') as f:
                 json.dump({"work_power": requesting_device.work_power}, f)
 
@@ -16,6 +17,7 @@ def test_solar_panel():
                 json.dump({"provided_power": providing_solar_panel.get_provided_power(),
                            "powered_devices": solar_panel.get_powered_devices()}, f)
 
+            # Run the policy
             output = subprocess.check_output("sentinel apply sentinel_policy_solar_panel.sentinel")
             output_str = output.decode("utf-8")
             if "Pass" in output_str:
@@ -29,8 +31,5 @@ def test_solar_panel():
     fan = ElectronicDevice(work_power=30)
     charger = ElectronicDevice(work_power=30)
     solar_panel = SolarPanel(provided_power=110, powered_devices=[hairdryer, fan])
-
-    # update_sentinel_policy(f'plug_slots = {plug.slots}\nplug_rated_power = {plug.rated_power}\n'
-    #                        f'electronic_device_work_power = {hairdryer.work_power}\ninput_act = "plug_in"\n\n')
 
     assert apply_policy(charger, solar_panel)

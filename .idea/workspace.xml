@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="added example window and window shade open based on weather condition and location of owner">
-      <change afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/electronic_device.hcl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/electronic_device.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_policy_solar_panel.sentinel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/solar_panel.hcl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/solar_panel.json" afterDir="false" />
+    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="changed the plug example to solar panel in sentinel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_definition/solar_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_definition/solar_panel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/opa_example/opa_app/opa_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/opa_example/opa_app/opa_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/go_policy.sentinel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/plug.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_policy.sentinel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="sentinel_example" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,12 +66,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Python tests for sentinel_test.test_solar_panel">
-    <configuration default="true" type="OPA_RUN_CONFIGURATION" factoryName="Opa configuration factory">
-      <option name="query" value="" />
-      <option name="additionalargs" value="" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="sentinel_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="master_thesis_examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -208,6 +190,7 @@
       <workItem from="1680869378452" duration="8949000" />
       <workItem from="1680961803803" duration="4170000" />
       <workItem from="1681042200487" duration="1029000" />
+      <workItem from="1681065793219" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="renamed project">
       <created>1679153715909</created>
@@ -328,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681047614883</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="changed the plug example to solar panel in sentinel">
+      <created>1681064642310</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681064642310</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +365,8 @@
     <MESSAGE value="added example light_on which demonstrates the reusability of other policy packages" />
     <MESSAGE value="added example window and window shade open based on weather condition and location of owner" />
     <MESSAGE value="changed the plug example to solar panel in oso" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the plug example to solar panel in oso" />
+    <MESSAGE value="changed the plug example to solar panel in sentinel" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the plug example to solar panel in sentinel" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/master_thesis_examples$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1679332508399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
@@ -386,7 +377,7 @@
     <SUITE FILE_PATH="coverage/master_thesis_examples$casbin_test__1_.coverage" NAME="casbin_test (1) Coverage Results" MODIFIED="1679157907997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1680210186762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1680813830032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
-    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1681064334233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1681064605724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1681064262430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$adapters.coverage" NAME="adapters Coverage Results" MODIFIED="1680799825790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/requests" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1679585167437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
