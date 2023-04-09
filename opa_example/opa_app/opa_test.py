@@ -68,7 +68,7 @@ def test_solar_panel():
         return response.json()["result"]
 
     assert eval_policy_solar_panel({"requesting_device": charger.get_json_work_power(),
-                                    "solar_panel": {"provided_power": solar_panel.get_rated_power(),
+                                    "solar_panel": {"provided_power": solar_panel.get_provided_power(),
                                                     "powered_devices": solar_panel.get_powered_devices()}})
 
     process.terminate()

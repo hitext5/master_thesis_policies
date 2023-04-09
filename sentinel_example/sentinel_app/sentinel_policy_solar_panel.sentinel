@@ -1,0 +1,13 @@
+import "solar_panel"
+import "electronic_device"
+
+total_power = 0
+
+for solar_panel.powered_devices as device {
+    device_power = device.work_power
+    total_power += device_power
+}
+
+main = rule {
+    solar_panel.provided_power >= total_power + electronic_device.work_power
+}

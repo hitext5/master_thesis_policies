@@ -18,8 +18,11 @@ class SolarPanel:
         except ValueError:
             return f"Device is not plugged in."
 
-    def get_rated_power(self):
+    def get_provided_power(self):
         return self.provided_power
+
+    def get_json_provided_power(self):
+        return {"provided_power": self.provided_power}
 
     def get_powered_devices(self):
         json_output = []

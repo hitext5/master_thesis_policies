@@ -1,24 +1,22 @@
+import json
 import subprocess
 
 from electronic_device import ElectronicDevice
 from solar_panel import SolarPanel
 
 
-def test_basic_sentinel():
-    # This function updates the sentinel policy file with the new plug rated power
-    def update_sentinel_policy(new_content: str):
-        with open("sentinel_policy.sentinel", "r") as file:
-            data = file.read()
-            start_index = data.index('plug_slots')
-            end_index = data.index('enough_power')
-            data = data[:start_index] + new_content + data[end_index:]
-        with open("sentinel_policy.sentinel", "w") as file:
-            file.write(data)
-
+def test_solar_panel():
     # Define a function to update the plug_json
-    def apply_policy():
+    def apply_policy(requesting_device: ElectronicDevice, providing_solar_panel: SolarPanel):
         try:
-            output = subprocess.check_output("sentinel apply sentinel_policy.sentinel")
+            with open('electronic_device.json', 'w') as f:
+                json.dump({"work_power": requesting_device.work_power}, f)
+
+            with open('solar_panel.json', 'w') as f:
+                json.dump({"provided_power": providing_solar_panel.get_provided_power(),
+                           "powered_devices": solar_panel.get_powered_devices()}, f)
+
+            output = subprocess.check_output("sentinel apply sentinel_policy_solar_panel.sentinel")
             output_str = output.decode("utf-8")
             if "Pass" in output_str:
                 return True
@@ -26,28 +24,13 @@ def test_basic_sentinel():
                 return False
         except subprocess.CalledProcessError:
             return False
-    # Create an instance of ElectronicDevice with a work_power of 40
+
     hairdryer = ElectronicDevice(work_power=40)
-
-    # Create an instance of ElectronicDevice with a work_power of 30
     fan = ElectronicDevice(work_power=30)
-
-    # Create an instance of ElectronicDevice with a work_power of 30
     charger = ElectronicDevice(work_power=30)
-
-    # Create an instance of SmartPlug with a rated_power of 90 and an empty list for plugged_devices
-    plug = SolarPanel(provided_power=90, powered_devices=[], slots=5)
+    solar_panel = SolarPanel(provided_power=110, powered_devices=[hairdryer, fan])
 
     # update_sentinel_policy(f'plug_slots = {plug.slots}\nplug_rated_power = {plug.rated_power}\n'
     #                        f'electronic_device_work_power = {hairdryer.work_power}\ninput_act = "plug_in"\n\n')
-    apply_policy()
-    # plug.plug_in(hairdryer)
-    #
-    # update_sentinel_policy(f'plug_slots = {plug.slots}\nplug_rated_power = {plug.rated_power}\n'
-    #                        f'electronic_device_work_power = {fan.work_power}\ninput_act = "plug_in"\n\n')
-    # assert apply_policy()
-    # plug.plug_in(fan)
-    #
-    # update_sentinel_policy(f'plug_slots = {plug.slots}\nplug_rated_power = {plug.rated_power}\n'
-    #                        f'electronic_device_work_power = {charger.work_power}\ninput_act = "plug_in"\n\n')
-    # assert not apply_policy()
+
+    assert apply_policy(charger, solar_panel)
