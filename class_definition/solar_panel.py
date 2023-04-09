@@ -10,13 +10,11 @@ class SolarPanel:
     powered_devices: List[ElectronicDevice]
 
     def plug_in(self, new_device: ElectronicDevice):
-        self.provided_power -= new_device.work_power
         self.powered_devices.append(new_device)
 
     def plug_out(self, old_device: ElectronicDevice):
         try:
             self.powered_devices.remove(old_device)
-            self.provided_power += old_device.work_power
         except ValueError:
             return f"Device is not plugged in."
 
@@ -29,3 +27,8 @@ class SolarPanel:
             json_output.append(device.get_json_work_power())
         return json_output
 
+    def get_used_work_power(self):
+        used_work_power = 0
+        for device in self.powered_devices:
+            used_work_power += device.get_work_power()
+        return used_work_power
