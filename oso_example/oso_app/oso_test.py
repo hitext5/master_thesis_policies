@@ -6,12 +6,10 @@ from solar_panel import SolarPanel
 
 # Check if the device is allowed to plug into the smart plug
 def test_solar_panel():
-    # Initialize the Oso object. This object is usually used globally throughout
-    # an application.
+    # Initialize the Oso object. This object is usually used globally throughout an application.
     oso = Oso()
 
-    # Tell Oso about the data you will authorize. These types can be referenced
-    # in the policy.
+    # Tell Oso about the data you will authorize. These types can be referenced in the policy.
     oso.register_class(ElectronicDevice)
     oso.register_class(SolarPanel)
 
