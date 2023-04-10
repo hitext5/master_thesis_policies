@@ -20,4 +20,4 @@ def test_solar_panel():
     charger = ElectronicDevice(work_power=30)
     solar_panel = SolarPanel(provided_power=100, powered_devices=[fan, charger])
 
-    assert oso.is_allowed(hairdryer, "plug_in", solar_panel)
+    assert oso.is_allowed(hairdryer, "power", solar_panel)
