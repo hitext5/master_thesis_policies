@@ -18,7 +18,7 @@ def test_solar_panel():
 
             # Run the policy
             output = subprocess.check_output("sentinel apply sentinel_policy_solar_panel.sentinel")
-            output_str = output.decode("utf-8")
+            output_str = output.decode("ascii")
             if "Pass" in output_str:
                 return True
             else:

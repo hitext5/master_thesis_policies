@@ -31,7 +31,4 @@ class SolarPanel:
         return json_output
 
     def get_used_work_power(self):
-        used_work_power = 0
-        for device in self.powered_devices:
-            used_work_power += device.get_work_power()
-        return used_work_power
+        return sum(device.get_work_power() for device in self.powered_devices)
