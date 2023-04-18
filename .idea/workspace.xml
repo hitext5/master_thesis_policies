@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="added solar panel example in python">
-      <change afterPath="$PROJECT_DIR$/class_definition/light_and_door.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/class_definition/location_and_time.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oso_example/oso_app/oso_policy_light_on.polar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oso_example/oso_app/oso_policy_open_door_and_window.polar" afterDir="false" />
+    <list default="true" id="d39f0967-aee3-43bf-a30c-54835317c361" name="Changes" comment="added polar examples to show policy imports, hierarchy and multiple objects">
+      <change afterPath="$PROJECT_DIR$/mqtt_trigger_example/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mqtt_trigger_example/client_classes/electronic_device_mqtt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mqtt_trigger_example/client_classes/solar_panel_mqtt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mqtt_trigger_example/mqtt_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/master_thesis_examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/master_thesis_examples.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_definition/door.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_definition/door.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class_definition/solar_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/class_definition/solar_panel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oso_example/oso_app/oso_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/oso_example/oso_app/oso_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_example/python_policy_solar_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_example/python_policy_solar_panel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentinel_example/sentinel_app/sentinel_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,20 +47,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/master_thesis_examples/opa_example/opa_app/opa.exe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/master_thesis_examples/opa_example/opa_app/opa.exe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\master_thesis_examples\opa_example\opa_setup\app" />
@@ -75,13 +73,14 @@
       <recent name="C:\master_thesis_examples\class_definition" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for oso_test.test_light_on">
-    <configuration default="true" type="OPA_TEST_RUN_CONFIGURATION" factoryName="Opa configuration factory">
+  <component name="RunManager" selected="Python.mqtt_test">
+    <configuration default="true" type="OPA_RUN_CONFIGURATION" factoryName="Opa configuration factory">
+      <option name="query" value="" />
       <option name="additionalargs" value="" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="python_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mqtt_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="master_thesis_examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -89,12 +88,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_example" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mqtt_trigger_example" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_example/python_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mqtt_trigger_example/mqtt_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,7 +163,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.python_test" />
+      <item itemvalue="Python.mqtt_test" />
       <item itemvalue="Python tests.Python tests for oso_test.test_close_door" />
       <item itemvalue="Python tests.Python tests for oso_test.test_light_on" />
       <item itemvalue="Python tests.Python tests for oso_test.test_open_door" />
@@ -172,11 +171,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mqtt_test" />
         <item itemvalue="Python tests.Python tests for oso_test.test_light_on" />
         <item itemvalue="Python tests.Python tests for oso_test.test_close_door" />
         <item itemvalue="Python tests.Python tests for oso_test.test_open_door" />
         <item itemvalue="Python tests.Python tests for oso_test.test_solar_panel" />
-        <item itemvalue="Python.python_test" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +209,8 @@
       <workItem from="1681133945253" duration="8128000" />
       <workItem from="1681220257093" duration="5896000" />
       <workItem from="1681481623944" duration="2714000" />
-      <workItem from="1681738989754" duration="5694000" />
+      <workItem from="1681738989754" duration="7340000" />
+      <workItem from="1681822849427" duration="19173000" />
     </task>
     <task id="LOCAL-00001" summary="renamed project">
       <created>1679153715909</created>
@@ -359,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681151124584</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added polar examples to show policy imports, hierarchy and multiple objects">
+      <created>1681745716593</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1681745716593</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,9 +416,11 @@
     <MESSAGE value="changed the plug example to solar panel in sentinel" />
     <MESSAGE value="better readability" />
     <MESSAGE value="added solar panel example in python" />
-    <option name="LAST_COMMIT_MESSAGE" value="added solar panel example in python" />
+    <MESSAGE value="added polar examples to show policy imports, hierarchy and multiple objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="added polar examples to show policy imports, hierarchy and multiple objects" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$mqtt_test.coverage" NAME="mqtt_test Coverage Results" MODIFIED="1681844198649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mqtt_trigger_example" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1679332508399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$test.coverage" NAME="test Coverage Results" MODIFIED="1679332339877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
     <SUITE FILE_PATH="coverage/master_thesis_examples$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1679507855845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
@@ -420,7 +429,7 @@
     <SUITE FILE_PATH="coverage/master_thesis_examples$casbin_test__1_.coverage" NAME="casbin_test (1) Coverage Results" MODIFIED="1679157907997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/casbin_example/app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$oso_test.coverage" NAME="oso_test Coverage Results" MODIFIED="1680210186762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$opa_test.coverage" NAME="opa_test Coverage Results" MODIFIED="1680813830032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
-    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1681745084179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
+    <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$.coverage" NAME=" Coverage Results" MODIFIED="1681745658143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oso_example/oso_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$sentinel_test.coverage" NAME="sentinel_test Coverage Results" MODIFIED="1681064262430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sentinel_example/sentinel_app" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$adapters.coverage" NAME="adapters Coverage Results" MODIFIED="1680799825790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Lib/site-packages/requests" />
     <SUITE FILE_PATH="coverage/Masterarbeit_Beispiele$test.coverage" NAME="test Coverage Results" MODIFIED="1681134832281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/opa_example/opa_app" />
