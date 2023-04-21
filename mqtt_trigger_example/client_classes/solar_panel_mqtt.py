@@ -24,6 +24,7 @@ class SolarPanel:
         if rc == 0:
             print("SolarPanel connected to MQTT Broker!")
             client.subscribe("device/+/on")
+            # client.subscribe("device/+/off")
         else:
             print("Failed to connect, return code %d\n", rc)
 
@@ -31,6 +32,14 @@ class SolarPanel:
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
         device_data = json.loads(msg.payload)
         device = ElectronicDevice(mqtt_id=device_data["device_id"], work_power=device_data["work_power"])
+        # TODO I need to subscribe to multiple topics to trigger different policies
+        #  or use state pattern in the ElectronicDevice class.
+        # if msg.topic.endswith("/on"):
+        #     result = eval_policy_solar_panel(device, self)
+        # elif msg.topic.endswith("/off"):
+        #     result = eval_policy_two(device, self)
+        # else:
+        #     result = "Unknown topic"
         result = eval_policy_solar_panel(device, self)
         topic = f"solar_panel/policy_result/{device.mqtt_id}"
         client.publish(topic, str(result))
@@ -39,3 +48,4 @@ class SolarPanel:
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
         self.client.connect(self.broker, self.port)
+        # Send message to server to store the device in the database.
