@@ -60,7 +60,7 @@ def test_solar_panel():
 
     def eval_policy_solar_panel(input_data):
         response = requests.post(
-            "http://localhost:8181/v1/data/solar_panel/enough_power",
+            "http://localhost:8181/v1/data/solar_panel",
             json={"input": input_data}
         )
         if response.status_code != 200:
