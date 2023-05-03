@@ -33,6 +33,6 @@ class SolarPanel:
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
         self.client.connect(self.broker, self.port)
-        topic = f"device/{self.device_id}/connected"
-        payload = {"device_id": self.device_id, "provided_power": self.provided_power}
-        self.client.publish(topic, json.dumps(payload))
+        # topic = f"device/{self.device_id}/connected"
+        # payload = {"device_id": self.device_id, "provided_power": self.provided_power}
+        # self.client.publish(topic, json.dumps(payload))
