@@ -56,7 +56,7 @@ def test_solar_panel():
     hairdryer = ElectronicDevice(work_power=40)
     fan = ElectronicDevice(work_power=30)
     charger = ElectronicDevice(work_power=30)
-    solar_panel = SolarPanel(provided_power=110, powered_devices=[hairdryer, fan])
+    solar_panel = SolarPanel(provided_power=100, powered_devices=[hairdryer, fan])
 
     def eval_policy_solar_panel(input_data):
         response = requests.post(
@@ -69,7 +69,7 @@ def test_solar_panel():
             return False
         return response.json()["result"]
 
-    assert eval_policy_solar_panel({"requesting_device": charger.get_json_work_power(),
+    assert eval_policy_solar_panel({"requesting_device": {"work_power": charger.get_work_power()},
                                     "solar_panel": {"provided_power": solar_panel.get_provided_power(),
                                                     "powered_devices": solar_panel.get_powered_devices()}})
     # Stop the OPA server

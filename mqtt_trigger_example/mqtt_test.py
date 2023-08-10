@@ -6,6 +6,9 @@ from solar_panel_mqtt import SolarPanel
 
 # C:\Program Files\mosquitto
 # mosquitto -v
+# If the port is already listening
+# netstat -ano | findstr :1883
+# taskkill /pid 7392 /F
 # Run mosquitto -v in a terminal to see the messages being sent and received.
 message_handler = MessageHandler()
 washing_machine = ElectronicDevice(device_id="washing_machine", work_power=400)
