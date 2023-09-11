@@ -12,6 +12,13 @@ https://www.openpolicyagent.org/docs/latest/#running-opa
 Download the sentinel exe from here:
 https://docs.hashicorp.com/sentinel/downloads
 
+Optional Plugins to help code in the policy languages:
+casbin -> https://plugins.jetbrains.com/plugin/14809-casbin
+
+open policy agent -> https://github.com/open-policy-agent/opa-idea-plugin/
+
+Terraform and HCL -> https://plugins.jetbrains.com/plugin/7808-terraform-and-hcl
+
 # Policy languages pages
 
 https://casbin.org/docs/overview
