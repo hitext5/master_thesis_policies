@@ -15,6 +15,9 @@ https://docs.hashicorp.com/sentinel/downloads
 # Policy languages pages
 
 https://casbin.org/docs/overview
+
 https://www.osohq.com/docs
+
 https://www.openpolicyagent.org/docs/latest/
+
 https://docs.hashicorp.com/sentinel/writing/imports
