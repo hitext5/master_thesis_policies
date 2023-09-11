@@ -45,9 +45,9 @@ def test_solar_panel():
     hairdryer = ElectronicDevice(work_power=40)
     fan = ElectronicDevice(work_power=30)
     charger = ElectronicDevice(work_power=30)
-    solar_panel = SolarPanel(provided_power=110, powered_devices=[fan, charger])
+    solar_panel = SolarPanel(provided_power=110, powered_devices=[hairdryer, fan])
 
-    assert oso.is_allowed(hairdryer, "power", solar_panel)
+    assert oso.is_allowed(charger, "power", solar_panel)
 
 
 def test_close_door():
